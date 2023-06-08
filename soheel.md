@@ -6,6 +6,9 @@
 - Low Poly Assets
 	- https://assetstore.unity.com/packages/3d/environments/landscapes/free-low-poly-nature-forest-205742
 	- https://devilsworkshop.itch.io/hyper-casual-game-assets-low-poly-beer-pong
+
+- Assets for Particle Effects
+	- https://assetstore.unity.com/packages/vfx/particles/particle-pack-127325	
 	
 - Unity API Docs:
 	- https://docs.unity3d.com/ScriptReference/Rigidbody.html
