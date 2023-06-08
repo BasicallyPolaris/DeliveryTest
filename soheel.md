@@ -10,6 +10,9 @@
 - Assets for Particle Effects
 	- https://assetstore.unity.com/packages/vfx/particles/particle-pack-127325	
 	
+- Unity-Tutorials: 
+  - https://www.youtube.com/watch?v=vmLIy62Gsnk
+
 - Unity API Docs:
 	- https://docs.unity3d.com/ScriptReference/Rigidbody.html
 	- https://docs.unity3d.com/ScriptReference/SerializeField.html

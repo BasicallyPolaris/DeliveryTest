@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ThrowingMechanics : MonoBehaviour
 {
+    private GameObject gameLogic;
     public Vector2 minPower;
     public Vector2 maxPower;
     public float forceMultiplier;
@@ -20,6 +21,7 @@ public class ThrowingMechanics : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
         startPos = transform.position;
+        gameLogic = GameObject.Find("GameLogic");
     }
 
     private void OnMouseDown()
@@ -38,15 +40,14 @@ public class ThrowingMechanics : MonoBehaviour
         Shoot(mouseReleasePos-mousePressDownPos);
     }
 
-
     private void Shoot(Vector3 Force)
     {
-        if(wasShot)    
-            return;
+        if(wasShot) return;
 
         rb.useGravity = true;
         rb.AddForce(new Vector3(Force.x,-Force.y,Force.y) * forceMultiplier);
         wasShot = true;
+        gameLogic.GetComponent<GameLogic>().increaseTries();
     }
 
     public void resetBall()
