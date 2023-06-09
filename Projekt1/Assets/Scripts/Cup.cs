@@ -25,6 +25,10 @@ public class Cup : MonoBehaviour
             dissipateState += 0.01f;
             GetComponent<Renderer>().material.SetFloat("_Dissipate_State", dissipateState);
         }   
+
+        if (dissipateState >= 1f) {
+            GetComponent<Collider>().enabled = false;
+        }
     }
 
     /**
@@ -37,7 +41,6 @@ public class Cup : MonoBehaviour
         {
             other.gameObject.GetComponent<ThrowingMechanics>().resetBall();
             gameLogic.GetComponent<GameLogic>().increseScore();
-            GetComponent<Collider>().enabled = false;
             ballCollider.enabled = false;
         }
     }

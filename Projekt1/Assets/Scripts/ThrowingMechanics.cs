@@ -18,7 +18,7 @@ public class ThrowingMechanics : MonoBehaviour
     private float resetting;
     private float dissipateState;
 
-    private bool collided;
+    private float collided;
     private bool respawning;
     
 
@@ -28,7 +28,7 @@ public class ThrowingMechanics : MonoBehaviour
         rb.useGravity = false;
         resetting = 0f;
         dissipateState = 0f;
-        collided = false;
+        collided = 0f;
         wasShot = false;
         respawning = false;
         startPos = transform.position;
@@ -41,13 +41,13 @@ public class ThrowingMechanics : MonoBehaviour
      */
     void Update()
     {
-        if (collided && resetting < 1f) {
+        if (collided >= 4f && resetting < 1f) {
             resetting += Time.deltaTime;
             return;
         }
 
-        if (collided && resetting >= 1f) {
-            collided = false;
+        if (collided >= 4f && resetting >= 1f) {
+            collided = 0;
             resetBall();
         }
 
@@ -80,7 +80,16 @@ public class ThrowingMechanics : MonoBehaviour
      */
     void OnCollisionEnter(Collision other) {
         if (other.gameObject.tag == "Table") {
-            collided = true;
+            collided++;
+        }
+    }
+
+    /**
+     * Used to detect if the ball is colliding with the table. If so, start dissipating the ball after 1 second.
+     */
+    void OnCollisionStay(Collision other) {
+        if (other.gameObject.tag == "Table") {
+            collided++;
         }
     }
 
@@ -120,6 +129,8 @@ public class ThrowingMechanics : MonoBehaviour
      */
     public void resetBall()
     {
+        collided = 0f;
+        respawning = false;
         resetting = 1f;
     }
 }
