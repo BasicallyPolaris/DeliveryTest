@@ -24,3 +24,6 @@
 - Assets:
 	- https://assetstore.unity.com/packages/3d/animations/basic-motions-free-154271
 	- https://assetstore.unity.com/packages/3d/environments/landscapes/lowpoly-environment-pack-99479
+
+- Tutorials:
+	- https://youtube.com/playlist?list=PLD\_vBJjpCwJsqpD8QRPNPMfVUpPFLVGg4
