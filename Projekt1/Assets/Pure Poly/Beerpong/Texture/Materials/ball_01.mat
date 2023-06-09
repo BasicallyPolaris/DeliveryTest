@@ -69,7 +69,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _Dissipate_State: 0
     - _DstBlend: 0
-    - _Edge_Width: 0.01
+    - _Edge_Width: 0.04
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -85,7 +85,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 0.65816295, b: 0.0047169924, a: 1}
-    - _Dissipate_Color: {r: 0.1568628, g: 1.662745, b: 2.996078, a: 1}
+    - _Dissipate_Color: {r: 9.660377, g: 0.80924624, b: 0.455201, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8700126100963231491
