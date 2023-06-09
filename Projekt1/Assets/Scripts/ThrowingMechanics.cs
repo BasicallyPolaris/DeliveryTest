@@ -59,6 +59,10 @@ public class ThrowingMechanics : MonoBehaviour
         if (resetting >= 1f && dissipateState >= 1) {
             resetting = 0f;
             transform.position = startPos;
+            wasShot = false;
+            rb.useGravity = false;
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
             respawning = true;
         }
 
@@ -116,10 +120,6 @@ public class ThrowingMechanics : MonoBehaviour
      */
     public void resetBall()
     {
-        wasShot = false;
-        rb.useGravity = false;
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
         resetting = 1f;
     }
 }
