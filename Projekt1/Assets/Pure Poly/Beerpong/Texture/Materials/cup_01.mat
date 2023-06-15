@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: cup_01
-  m_Shader: {fileID: -6465566751694194690, guid: 66e368eeccb8a3e46b450482fe6f586a, type: 3}
+  m_Shader: {fileID: 4800000, guid: b8ecdf2a41db8f24aa640861b078c606, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
