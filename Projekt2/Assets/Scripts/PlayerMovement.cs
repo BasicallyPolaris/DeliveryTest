@@ -50,10 +50,11 @@ public class PlayerMovement : MonoBehaviour {
     private void Move() {
         isGrounded = controller.isGrounded; 
 
+        if (isGrounded) animator.SetBool("Jump", false); 
         float moveZ = Input.GetAxis("Vertical");
-        float moveX = Input.GetAxis("Horizontal");
+        // float moveX = Input.GetAxis("Horizontal");
 
-        moveDirection = new Vector3(moveX, 0, moveZ);
+        moveDirection = new Vector3(0, 0, moveZ);
         moveDirection = transform.TransformDirection(moveDirection);
 
         if (isGrounded && velocity.y < 0) {
@@ -125,5 +126,6 @@ public class PlayerMovement : MonoBehaviour {
      */
     private void Jump() {
         velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+        animator.SetBool("Jump", true);
     }
 }
