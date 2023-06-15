@@ -3003,10 +3003,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de143a89f59e054381e58276471ec9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
+  ikWeight: 1
+  groundMask:
     serializedVersion: 2
     m_Bits: 8
-  DistanceToGround: 0.13
+  footPlacementOffset: 0.1
 --- !u!4 &388610154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b58e7fdfb89fbc549b36a69243aee4c0, type: 3}
