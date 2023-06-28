@@ -50,6 +50,16 @@ public class FlockManager : MonoBehaviour
     {
         calculateAveragePosition();
     }
+    public bool isNearestEnemy(GameObject seeker) {
+        float shortestDistance = Vector3.Distance(getNearestNeighbour(seeker).transform.position, seeker.transform.position);
+        float distance = shortestDistance;
+        foreach (GameObject enemy in allEnemies)
+        {
+            distance = Vector3.Distance(getNearestNeighbour(enemy).transform.position, enemy.transform.position);
+            shortestDistance = (distance < shortestDistance) ? distance : shortestDistance;
+        }
+        return shortestDistance <= distance;
+    }
     public GameObject getNearestNeighbour(GameObject seeker) {
         GameObject nearestNeighbour = allTurtles[0];
         float shortestDistance = Vector3.Distance(nearestNeighbour.transform.position, seeker.transform.position);

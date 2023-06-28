@@ -28,10 +28,6 @@ public class FlockMember : MonoBehaviour
         planMovement();
         
     }
-
-    public void checkAttack() {
-        
-    } 
     private void seekFlock() {
         agent.SetDestination(manager.averagePosition);
     }

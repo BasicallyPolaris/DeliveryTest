@@ -17,7 +17,7 @@ namespace Seeker
 
         private Ray searchRay;
         private RaycastHit hit;
-        private NavMeshAgent agent;
+        protected NavMeshAgent agent;
 
         public SearchState currentSearchState;
 
@@ -25,7 +25,7 @@ namespace Seeker
         private Vector3 baseVelocity;
 
         // Start is called before the first frame update
-        void Start()
+        public void Start()
         {
             agent = GetComponent<NavMeshAgent>();
             currentSearchState = SearchState.WANDER;
@@ -40,7 +40,7 @@ namespace Seeker
             updateSearchState();
         }
 
-        private void updateSearchState() {
+        protected void updateSearchState() {
             //Only update if agent is near its destination
             distanceToTarget = Vector3.Distance(target.position, agent.transform.position);
             if (agent.remainingDistance < agent.stoppingDistance) {
@@ -74,13 +74,12 @@ namespace Seeker
             }
         }
 
-        private void wander() {
+        protected void wander() {
             float targetX = Random.Range(-10f, 10f);
             float targetY = Random.Range(-10f, 10f);
             Vector3 targetOffset = new Vector3(targetX, 0f, targetY);
             currentDestination = agent.transform.position + targetOffset;
             agent.SetDestination(currentDestination);
-            
         }
 
         private void seek() {
