@@ -7,6 +7,11 @@ Throwing mechanics:
     - Die Translation auf die Kräfte wurde umgekehrt um das Verhalten einer Schleuder zu simulieren.
 
 ## Aufgabe 3:
+Größte Schwierigkeit:
+Die Unity Funktionalität zu Navigations Agenten zu verstehen, war herausfordernd an dieser Aufgabe.
+Der Editor in Unity erlaubt es einem zusätzliche Features wie mehrere Agententypen zu verwenden, obwohl diese nur durch Erweiterungen funktionieren.
+Die Fehlermeldungen die bei Verwendung von mehreren Agententypen ausgegeben werden beziehen sich auf ein anderes Problem und führen nur zu falschen Ansätzen beim Debugging.
+
 Assets:
 - https://assetstore.unity.com/packages/3d/environments/landscapes/lowpoly-environment-pack-99479
     - Hieraus wurden Bäume und Materialien verwendet, um keine eigenen Shader und Materialien verwenden zu müssen.
