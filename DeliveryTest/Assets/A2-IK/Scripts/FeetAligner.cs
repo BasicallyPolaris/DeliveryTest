@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class FeetAligner : MonoBehaviour
 {
-    [Range(0, 1f)]
-    public float ikWeight = 1f; // Blend between animation and IK placement.
+    [SerializeField][Range(0, 1f)]
+    private float ikWeight = 1f; // Blend between animation and IK placement.
 
-    public LayerMask groundMask; // Layer mask for the ground.
+    // Layer mask for the ground.
+    [SerializeField]
+    private LayerMask groundMask; 
 
-    public float footPlacementOffset = 0.1f; // Offset for the foot placement.
+    // Offset for foot placement (so it doesn't go into the ground)
+    [SerializeField]
+    private float footPlacementOffset = 0.1f; 
 
     private Animator animator;
 
@@ -36,9 +40,9 @@ public class FeetAligner : MonoBehaviour
     private void AdjustFootIK(AvatarIKGoal ikGoal, Vector3 rayDir)
     {
         Vector3 rayStartPos = animator.GetIKPosition(ikGoal) + Vector3.up;
-        bool isGround = Physics.Raycast(rayStartPos, rayDir, out RaycastHit hitInfo, 2f, groundMask);
+        bool grounded = Physics.Raycast(rayStartPos, rayDir, out RaycastHit hitInfo, 2f, groundMask);
 
-        if (isGround)
+        if (grounded)
         {
             Vector3 hitPos = hitInfo.point;
             hitPos += hitInfo.normal * footPlacementOffset;
